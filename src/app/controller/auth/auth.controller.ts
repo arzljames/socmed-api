@@ -2,8 +2,10 @@ import { Controller, Get, Post, Body, Req } from '@nestjs/common';
 import { ApiBody, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { RegisterUserDTO } from 'src/app/dto/auth';
 import { Request as Express } from 'express';
-import { AbstractUserService } from 'src/app/interface/user';
-import { User } from 'src/app/model/user/user.schema';
+import {
+  AbstractUserService,
+  CreatedUserResponse,
+} from 'src/app/interface/user';
 
 @ApiTags('auth')
 @Controller('auth')
@@ -27,7 +29,7 @@ export class AuthController {
   async create(
     @Req() request: Express,
     @Body() body: RegisterUserDTO,
-  ): Promise<User | null> {
+  ): Promise<CreatedUserResponse | null> {
     return await this.userService.create(body);
   }
 }
