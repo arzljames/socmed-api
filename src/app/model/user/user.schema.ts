@@ -13,10 +13,10 @@ export type UserDocument = User & Document;
 export class User implements GenericSchema {
   _id: string;
 
-  @Prop()
+  @Prop({ unique: true })
   email: string;
 
-  @Prop()
+  @Prop({ unique: true })
   username: string;
 
   @Prop()
