@@ -3,6 +3,18 @@
   "collection": "@nestjs/schematics",
   "sourceRoot": "src",
   "compilerOptions": {
-    "deleteOutDir": true
+    "deleteOutDir": true,
+    "webpack": true
+  },
+  "projects": {
+    "jsonwebtoken": {
+      "type": "library",
+      "root": "libs/jsonwebtoken",
+      "entryFile": "index",
+      "sourceRoot": "libs/jsonwebtoken/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/jsonwebtoken/tsconfig.lib.json"
+      }
+    }
   }
 }
