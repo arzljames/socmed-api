@@ -122,7 +122,7 @@ export class UserRepository implements AbstractUserRepository {
   }
 
   private pickProfileColor(): string {
-    const randomNumber = _.random(0, 5);
+    let randomNumber: number = _.random(0, 10);
     const randomColor = _.filter(
       DEFAULT_PROFILE_COLORS,
       (_item: Array<string>, index: number) => {
@@ -139,7 +139,8 @@ export class UserRepository implements AbstractUserRepository {
 
       for (let i = 0; i < separatedWord.length; i++) {
         separatedWord[i] =
-          separatedWord[i].charAt(0).toUpperCase() + separatedWord[i].slice(1);
+          separatedWord[i].charAt(0).toUpperCase() +
+          separatedWord[i].slice(1).toLowerCase();
       }
 
       return separatedWord.join(' ');

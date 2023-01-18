@@ -25,6 +25,9 @@ export class User implements GenericSchema {
   @Prop({ default: false })
   is_verified: boolean;
 
+  @Prop({ default: true })
+  is_new_user: boolean;
+
   @Prop({ default: 'Offline' })
   status: string;
 
