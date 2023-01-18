@@ -122,8 +122,8 @@ export class UserRepository implements AbstractUserRepository {
   }
 
   private pickProfileColor(): string {
-    let randomNumber: number = _.random(0, 10);
-    const randomColor = _.filter(
+    const randomNumber = _.random(0, 10);
+    const randomColor: any = _.filter(
       DEFAULT_PROFILE_COLORS,
       (_item: Array<string>, index: number) => {
         return index === randomNumber;
