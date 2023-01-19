@@ -18,6 +18,8 @@ async function bootstrap() {
 
   app.enableCors({
     origin: ['http://localhost:3000', 'https://app-socmed.vercel.app'],
+    methods: ["PUT", "DELETE", "GET", "POST", "*"],
+    credentials: true,
   });
 
   //Swagger OpenAPI Documentation
