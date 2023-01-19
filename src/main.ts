@@ -16,7 +16,9 @@ async function bootstrap() {
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: true }));
 
-  app.enableCors({ origin: allowedOrigins.split(','), credentials: true });
+  app.enableCors({
+    origin: ['http://localhost:3000', 'https://app-socmed.vercel.app'],
+  });
 
   //Swagger OpenAPI Documentation
   const document = SwaggerModule.createDocument(app, swaggerconfig);
