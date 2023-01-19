@@ -24,3 +24,15 @@ export class RegisterUserDTO {
   @MaxLength(24)
   password: string;
 }
+
+export class LoginUserDTO {
+  @IsString()
+  @IsNotEmpty()
+  username: string;
+
+  @IsString()
+  @IsNotEmpty()
+  @MinLength(6)
+  @MaxLength(24)
+  password: string;
+}
